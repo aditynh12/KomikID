@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ComicVault - Offline Manga & Manhwa Tracker</title>
+    <title>MyKomik - Daftar Komik</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- FontAwesome Icons -->
@@ -12,6 +12,62 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
+
+    /* Tampilan sederhana MyKomik — hanya mengubah gaya, bukan fitur */
+    :root {
+        color-scheme: dark;
+        --my-bg: #111318;
+        --my-panel: #191c22;
+        --my-border: #2b3038;
+        --my-accent: #e34b52;
+        --my-text: #eeeeef;
+        --my-muted: #9ca3af;
+    }
+    body {
+        background: var(--my-bg) !important;
+        color: var(--my-text);
+        font-family: Inter, system-ui, sans-serif;
+    }
+    header {
+        background: #15171c !important;
+        backdrop-filter: none !important;
+        border-color: var(--my-border) !important;
+        box-shadow: none !important;
+    }
+    header .bg-gradient-to-tr {
+        background: var(--my-accent) !important;
+        border-radius: 10px !important;
+        box-shadow: none !important;
+    }
+    header h1 {
+        background: none !important;
+        -webkit-text-fill-color: var(--my-text) !important;
+        color: var(--my-text) !important;
+    }
+    .bg-slate-900\/60, .bg-slate-900\/40, .bg-slate-900\/30 {
+        background: var(--my-panel) !important;
+        border-color: var(--my-border) !important;
+        backdrop-filter: none !important;
+    }
+    .rounded-3xl, .rounded-2xl, .rounded-xl { border-radius: 10px !important; }
+    .shadow-sm, .shadow-lg, .shadow-xl, .shadow-2xl { box-shadow: none !important; }
+    .bg-indigo-600, .hover\:bg-indigo-600:hover { background-color: var(--my-accent) !important; }
+    .hover\:bg-indigo-500:hover { background-color: #c83b43 !important; }
+    .text-indigo-400, .text-indigo-500 { color: #f07177 !important; }
+    .border-indigo-500 { border-color: var(--my-accent) !important; }
+    input, select, textarea { border-radius: 8px !important; box-shadow: none !important; }
+    input:focus, select:focus, textarea:focus {
+        --tw-ring-color: var(--my-accent) !important;
+        border-color: var(--my-accent) !important;
+    }
+    #comicContainer .group:hover { border-color: #454b57 !important; }
+    #comicContainer .group img { transition: none !important; }
+    #alphabetFilter button { border-radius: 7px !important; }
+    @media (max-width: 640px) {
+        main { padding-top: 16px !important; padding-bottom: 20px !important; }
+        #comicContainer .grid { gap: 12px !important; }
+        #comicContainer .p-5 { padding: 14px !important; }
+    }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-full flex flex-col selection:bg-indigo-500 selection:text-white">
@@ -24,7 +80,7 @@
                     <i class="fa-solid fa-book-open text-white text-lg"></i>
                 </div>
                 <div>
-                    <h1 class="font-bold text-lg tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">ComicVault</h1>
+                    <h1 class="font-bold text-lg tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">MyKomik</h1>
                     <p class="text-xs text-slate-400">Offline Manga & Manhwa Tracker</p>
                 </div>
             </div>
